@@ -1,225 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Varsh's Store | Home</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #444;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      padding: 1rem;
-      text-decoration: none;
-    }
-    nav a:hover {
-      background-color: #666;
-    }
-    .button {
-      display: inline-block;
-      margin: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #007BFF;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      margin-bottom: 2rem;
-    }
-    .hero img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-    }
-    .promo-banner {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-
-    /* Featured Products */
-    .featured-products {
-      padding: 2rem;
-      text-align: center;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5rem;
-      padding: 1rem;
-    }
-    .product-card {
-      background: white;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
-    .product-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: contain;
-    }
-
-    /* Testimonials & Newsletter */
-    .testimonials, .newsletter {
-      margin: 2rem auto;
-      padding: 1rem;
-      max-width: 800px;
-    }
-    .testimonial {
-      background: #f0f0f0;
-      padding: 1.5rem;
-      border-left: 4px solid #007BFF;
-      margin: 1rem 0;
-    }
-    .newsletter input {
-      padding: 0.8rem;
-      width: 300px;
-      max-width: 100%;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      margin-right: 0.5rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-    .social-links a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Products</title>
+    <style>
+        /* All previous styles from index.html */
+        
+        /* Products Section */
+        .products {
+            padding: 60px 0;
+        }
+        
+        .products h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .product-info p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Welcome to Varsh's Store</h1>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">ShopEasy</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="products.html">Products</a>
-    <a href="cart.html">Cart</a>
-    <a href="orders.html">Orders</a>
-  </nav>
-
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="https://via.placeholder.com/1200x400" alt="Varsh's Store - Quality Products">
-      <div class="promo-banner">
-        <p>🔥 Limited-Time Offer: 20% Off Everything! Use code <strong>VARSHSALE</strong></p>
-      </div>
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Product 1">
+                    </div>
+                    <div class="product-info">
+                        <h3>Wireless Headphones</h3>
+                        <p>Premium sound quality with noise cancellation</p>
+                        <div class="product-price">$99.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Product 2">
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Watch</h3>
+                        <p>Track your fitness and stay connected</p>
+                        <div class="product-price">$199.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Product 3">
+                    </div>
+                    <div class="product-info">
+                        <h3>Bluetooth Speaker</h3>
+                        <p>Portable speaker with 20hr battery life</p>
+                        <div class="product-price">$59.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Product 4">
+                    </div>
+                    <div class="product-info">
+                        <h3>Laptop Backpack</h3>
+                        <p>Durable and stylish backpack for professionals</p>
+                        <div class="product-price">$49.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Product 5">
+                    </div>
+                    <div class="product-info">
+                        <h3>Wireless Mouse</h3>
+                        <p>Ergonomic design with silent clicks</p>
+                        <div class="product-price">$29.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Product 6">
+                    </div>
+                    <div class="product-info">
+                        <h3>Desk Lamp</h3>
+                        <p>Adjustable brightness with USB charging</p>
+                        <div class="product-price">$39.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Wireless Headphones">
-          <h3>Wireless Headphones</h3>
-          <p>$59.99</p>
-          <button class="button">Add to Cart</button>
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>ShopEasy is committed to providing quality products and excellent customer service.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="orders.html">Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Street, City</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@shopeasy.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ShopEasy. All rights reserved.</p>
+            </div>
         </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Smart Watch">
-          <h3>Smart Watch</h3>
-          <p>$129.99</p>
-          <button class="button">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Bluetooth Speaker">
-          <h3>Bluetooth Speaker</h3>
-          <p>$39.99</p>
-          <button class="button">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Backpack">
-          <h3>Travel Backpack</h3>
-          <p>$49.99</p>
-          <button class="button">Add to Cart</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <h2>What Our Customers Say</h2>
-      <div class="testimonial">
-        <p>"Great products and fast shipping! I’ll definitely shop here again." – <em>Alex</em></p>
-      </div>
-      <div class="testimonial">
-        <p>"Excellent customer service. The quality exceeded my expectations!" – <em>Priya</em></p>
-      </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-      <h2>Subscribe for Updates</h2>
-      <form>
-        <input type="email" placeholder="Your Email" required>
-        <button type="submit" class="button">Subscribe</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Varsh's Store. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Twitter</a>
-    </div>
-  </footer>
+    </footer>
 </body>
 </html>
