@@ -1,218 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEasy - Products</title>
-    <style>
-        /* All previous styles from index.html */
-        
-        /* Products Section */
-        .products {
-            padding: 60px 0;
-        }
-        
-        .products h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .product-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .product-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .product-card:hover .product-img img {
-            transform: scale(1.1);
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-info h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .product-info p {
-            color: #7f8c8d;
-            margin-bottom: 15px;
-        }
-        
-        .product-price {
-            font-size: 22px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .add-to-cart {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .add-to-cart:hover {
-            background-color: #2980b9;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+    }
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #666;
+    }
+    .main-content {
+      padding: 2rem;
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <div class="logo">ShopEasy</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="orders.html">Orders</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <h1>Welcome to Varsh's Store</h1>
+  </header>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <h2>Our Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Product 1">
-                    </div>
-                    <div class="product-info">
-                        <h3>Wireless Headphones</h3>
-                        <p>Premium sound quality with noise cancellation</p>
-                        <div class="product-price">$99.99</div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Product 2">
-                    </div>
-                    <div class="product-info">
-                        <h3>Smart Watch</h3>
-                        <p>Track your fitness and stay connected</p>
-                        <div class="product-price">$199.99</div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Product 3">
-                    </div>
-                    <div class="product-info">
-                        <h3>Bluetooth Speaker</h3>
-                        <p>Portable speaker with 20hr battery life</p>
-                        <div class="product-price">$59.99</div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Product 4">
-                    </div>
-                    <div class="product-info">
-                        <h3>Laptop Backpack</h3>
-                        <p>Durable and stylish backpack for professionals</p>
-                        <div class="product-price">$49.99</div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Product 5">
-                    </div>
-                    <div class="product-info">
-                        <h3>Wireless Mouse</h3>
-                        <p>Ergonomic design with silent clicks</p>
-                        <div class="product-price">$29.99</div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Product 6">
-                    </div>
-                    <div class="product-info">
-                        <h3>Desk Lamp</h3>
-                        <p>Adjustable brightness with USB charging</p>
-                        <div class="product-price">$39.99</div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <nav>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+  </nav>
 
-    <!-- Footer (same as index.html) -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About Us</h3>
-                    <p>ShopEasy is committed to providing quality products and excellent customer service.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="orders.html">Orders</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Street, City</li>
-                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
-                        <li><i class="fas fa-envelope"></i> info@shopeasy.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 ShopEasy. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <div class="main-content">
+    <h2>Your one-stop shop for all needs!</h2>
+    <a href="products.html" class="button">View Products</a>
+    <a href="cart.html" class="button">Go to Cart</a>
+    <a href="orders.html" class="button">Track Orders</a>
+  </div>
 </body>
 </html>
