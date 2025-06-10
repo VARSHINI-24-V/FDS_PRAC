@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Varsh's Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+    }
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #666;
+    }
+    .main-content {
+      padding: 2rem;
+      text-align: center;
+    }
+    .product {
+      background-color: white;
+      margin: 1rem auto;
+      padding: 1rem;
+      border-radius: 5px;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .add-to-cart {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .add-to-cart:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Products</h1>
+  </header>
+
+  <nav>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+  </nav>
+
+  <div class="main-content">
+    <div class="product">
+      <h3>Product 1</h3>
+      <p>Description of Product 1.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <h3>Product 2</h3>
+      <p>Description of Product 2.</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <!-- Add more products as needed -->
+  </div>
+</body>
+</html>
