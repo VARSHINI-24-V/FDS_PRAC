@@ -61,11 +61,19 @@
 
   <script>
     function addToCart(productName, price) {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.push({ productName, price });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert(`${productName} added to cart!`);
-    }
+  const quantity = parseInt(prompt(`Enter quantity for ${productName}`), 10);
+
+  if (isNaN(quantity) || quantity <= 0) {
+    alert("Please enter a valid quantity!");
+    return;
+  }
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ productName, price: Number(price), quantity: Number(quantity) });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${productName} added to cart with quantity ${quantity}`);
+}
+
   </script>
   <center>
   <a href="cart.html" style="font-size: larger;">Check your cart</a>
