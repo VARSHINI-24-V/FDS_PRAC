@@ -109,6 +109,9 @@
     });
 
     totalDisplay.textContent = `Total: ₹${total}`;
+
+    // Clear cart after displaying
+    localStorage.removeItem("cart");
   </script>
 </body>
 </html>
