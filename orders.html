@@ -102,25 +102,19 @@
   </center>
 
   <script>
-    // Get orders from localStorage
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const tableBody = document.getElementById("order-items");
-    const totalDisplay = document.getElementById("order-total");
+   function addToCart(productName, price) {
+  const quantity = parseInt(prompt(`Enter quantity for ${productName}`), 10);
 
-    let total = 0;
+  if (isNaN(quantity) || quantity <= 0) {
+    alert("Please enter a valid quantity!");
+    return;
+  }
 
-    cart.forEach(item => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${item.productName}</td>
-        <td>${item.quantity}</td>
-        <td>₹${item.price * item.quantity}</td>
-      `;
-      total += item.price * item.quantity;
-      tableBody.appendChild(row);
-    });
-
-    totalDisplay.textContent = "₹" + total;
-  </script>
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ productName, price: Number(price), quantity: Number(quantity) });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${productName} added to cart with quantity ${quantity}`);
+}
+</script>
 </body>
 </html>
