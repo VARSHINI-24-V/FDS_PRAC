@@ -3,65 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orders</title>
+  <title>Your Orders</title>
   <style>
-    body { font-family: Arial; background: #f9f9f9; padding: 0; margin: 0; }
-    header { background: #333; color: white; padding: 1rem; text-align: center; }
-    .main-content { padding: 2rem; text-align: center; }
-    .order {
-      background: white; margin: 1rem auto; padding: 1rem;
-      max-width: 600px; border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
     }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    th, td { border: 1px solid #ccc; padding: 0.75rem; text-align: left; }
-    th { background-color: #eee; }
-    .status { font-weight: bold; color: green; }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .main-content {
+      padding: 2rem;
+    }
+
+    .order-block {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .order-block h3 {
+      margin-top: 0;
+    }
+
+    .status {
+      color: green;
+      font-weight: bold;
+    }
+
+    .item {
+      margin: 0.75rem 0;
+      padding: 0.75rem;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+
+    .item span {
+      display: block;
+    }
+
+    .total {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 1rem;
+      color: #222;
+    }
+
+    .thank-you {
+      text-align: center;
+      color: crimson;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
-  <header><h1>Your Orders</h1></header>
+  <header>
+    <h1>Your Orders</h1>
+  </header>
 
   <div class="main-content">
-    <div class="order">
+    <div class="order-block">
       <h3>Order #1001</h3>
       <p>Status: <span class="status">Shipped</span></p>
-
-      <table>
-        <thead>
-          <tr><th>Item</th><th>Quantity</th><th>Price (₹)</th></tr>
-        </thead>
-        <tbody id="order-items"></tbody>
-        <tfoot>
-          <tr><th colspan="2">Total</th><th id="order-total">₹0</th></tr>
-        </tfoot>
-      </table>
+      <div id="order-items"></div>
+      <div class="total" id="order-total">Total: ₹0</div>
     </div>
   </div>
 
+  <div class="thank-you">THANK YOU</div>
+  <center><a href="products.html" style="font-size: larger;">Want to place a new order?</a></center>
+
   <script>
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const tableBody = document.getElementById("order-items");
+    const orderItems = document.getElementById("order-items");
     const totalDisplay = document.getElementById("order-total");
 
     let total = 0;
 
     cart.forEach(item => {
-      const { productName, price, quantity } = item;
-
+      const { productName, quantity, price } = item;
       const itemTotal = price * quantity;
       total += itemTotal;
 
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${productName}</td>
-        <td>${quantity}</td>
-        <td>₹${itemTotal}</td>
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("item");
+      itemDiv.innerHTML = `
+        <span><strong>Item:</strong> ${productName}</span>
+        <span><strong>Quantity:</strong> ${quantity}</span>
+        <span><strong>Price:</strong> ₹${itemTotal}</span>
       `;
-      tableBody.appendChild(row);
+      orderItems.appendChild(itemDiv);
     });
 
-    totalDisplay.textContent = `₹${total}`;
+    totalDisplay.textContent = `Total: ₹${total}`;
   </script>
 </body>
 </html>
